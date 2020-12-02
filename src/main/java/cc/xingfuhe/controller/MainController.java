@@ -13,8 +13,13 @@ import javax.servlet.http.HttpServletRequest;
  * @date 2020-12-01 15:15
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping
 public class MainController {
+
+    @RequestMapping("/")
+    public String indexRequest(HttpServletRequest request){
+        return "index";
+    }
 
     @RequestMapping("/{path}")
     public String anyRequest(HttpServletRequest request,@PathVariable("path") String path){
